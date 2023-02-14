@@ -22,25 +22,48 @@
 
 // /*--------------------------------------------*/
 
+// Console.Clear();
+// Console.WriteLine("Task 43");
+// Console.WriteLine("------");
+
+// Console.Write("Введите b1: ");
+// double b1 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите k1: ");
+// double k1 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите b2: ");
+// double b2 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите k2: ");
+// double k2 = Convert.ToInt32(Console.ReadLine());
+
+// if (k1 == k2) Console.WriteLine("Не пересекаются");
+// else{
+//   double x = (b2-b1)/(k1-k2);
+//   double y = k1*x+b1;
+//   Console.WriteLine($"X = {Math.Round(x,2)}, Y = {Math.Round(y,2)}");
+// }
+
+// Console.ReadLine();
+
+// /*--------------------------------------------*/
+
 Console.Clear();
-Console.WriteLine("Task 43");
+Console.WriteLine("Task add 1");
 Console.WriteLine("------");
 
-Console.Write("Введите b1: ");
-double b1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите k1: ");
-double k1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите b2: ");
-double b2 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите k2: ");
-double k2 = Convert.ToInt32(Console.ReadLine());
+string str = Console.ReadLine();
 
-if (k1 == k2) Console.WriteLine("Не пересекаются");
-else{
-  double x = (b2-b1)/(k1-k2);
-  double y = k1*x+b1;
-  Console.WriteLine($"X = {Math.Round(x,2)}, Y = {Math.Round(y,2)}");
-}
+char[] strArray = str.ToCharArray();
+char[] strArrayWork = str.ToCharArray();
+do{
+  for (int i = 0; i < strArrayWork.Length-1; i++)
+  {
+    char temp = strArrayWork[i];
+    strArrayWork[i] = strArrayWork[i+1];
+    strArrayWork[i+1] = temp;
+  }
+  Console.WriteLine(strArrayWork);
+}while(!Enumerable.SequenceEqual(strArray, strArrayWork));
+
 
 Console.ReadLine();
 
