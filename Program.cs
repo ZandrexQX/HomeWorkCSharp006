@@ -50,19 +50,24 @@ Console.Clear();
 Console.WriteLine("Task add 1");
 Console.WriteLine("------");
 
-string str = Console.ReadLine();
+string enter = Console.ReadLine();
 
-char[] strArray = str.ToCharArray();
-char[] strArrayWork = str.ToCharArray();
-do{
-  for (int i = 0; i < strArrayWork.Length-1; i++)
-  {
-    char temp = strArrayWork[i];
-    strArrayWork[i] = strArrayWork[i+1];
-    strArrayWork[i+1] = temp;
-  }
-  Console.WriteLine(strArrayWork);
-}while(!Enumerable.SequenceEqual(strArray, strArrayWork));
+char[] strArray = enter.ToCharArray();
+char[] strArrayWork = enter.ToCharArray();
+Console.WriteLine("------");
+string result = "";
+Comb(strArray,result,strArray.Length);
+
+void Comb(char[] array,string str, int n){
+    foreach (var i in array)
+    {
+        string a = str;
+        if(a.Length == array.Length) Console.WriteLine(a);
+        if (n==0) return;
+        if (!str.Contains(i)) a += i;
+        Comb(array,a,n-1);
+    }
+}
 
 
 Console.ReadLine();
