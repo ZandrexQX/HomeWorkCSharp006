@@ -50,10 +50,7 @@ Console.Clear();
 Console.WriteLine("Task add 1");
 Console.WriteLine("------");
 
-string enter = Console.ReadLine();
-
-char[] strArray = enter.ToCharArray();
-char[] strArrayWork = enter.ToCharArray();
+char[] strArray = Console.ReadLine().ToCharArray();
 Console.WriteLine("------");
 string result = "";
 Comb(strArray,result,strArray.Length);
